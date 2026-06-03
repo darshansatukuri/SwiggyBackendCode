@@ -21,6 +21,7 @@ const mongoose = require('mongoose')
 
 const bodyParser = require("body-parser");
 
+const PORT= process.env.PORT || 4000;
 
 
 
@@ -28,7 +29,6 @@ dotEnv.config();
 
 
 
-const PORT= process.env.PORT || 4000;
 
 const app = express();
 
@@ -55,7 +55,7 @@ app.use("/product",productRoutes)
 app.use("/uploads",express.static('uploads'));
 
 
-app.use("/",(req,res)=>{
-    res.send("<h1>Welcome to SUBY");
+app.use('/', (req,res)=>{
+    res.send("Welcome to SUBY");
 })
 
