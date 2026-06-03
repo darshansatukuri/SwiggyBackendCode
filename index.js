@@ -9,7 +9,7 @@ const productRoutes = require("./routes/productRoutes")
 
 
 const cors = require("cors")
-const PORT  = 4000; 
+ 
 
 
 const path = require("path")
