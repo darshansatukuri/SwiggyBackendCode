@@ -56,6 +56,6 @@ app.use("/uploads",express.static('uploads'));
 
 
 app.use("/",(req,res)=>{
-    response.send("<h1>Welcome to SUBY");
+    res.send("<h1>Welcome to SUBY");
 })
 
