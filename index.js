@@ -9,6 +9,7 @@ const productRoutes = require("./routes/productRoutes")
 
 
 const cors = require("cors")
+const PORT  = 4000; 
 
 
 const path = require("path")
@@ -27,7 +28,7 @@ dotEnv.config();
 
 
 
-const port= 4000 ;
+const PORT= process.env.PORT || 4000;
 
 const app = express();
 
@@ -38,8 +39,8 @@ app.use(bodyParser.json());
 
 mongoose.connect(process.env.MONGO_URL).then(()=>console.log("MongoDb connected Sucessfully!")).catch((error)=>console.log(error))
 
-app.listen(port,()=>{
-    console.log("Server started at port 4000")
+app.listen(PORT,()=>{
+    console.log(`Server started and running at ${PORT}` )
 })
 
 
@@ -52,4 +53,9 @@ app.use("/firm" ,firmRoutes)
 app.use("/product",productRoutes)
 
 app.use("/uploads",express.static('uploads'));
+
+
+app.use("/",(req,res)=>{
+    response.send("<h1>Welcome to SUBY");
+})
 
