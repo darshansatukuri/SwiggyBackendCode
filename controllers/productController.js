@@ -10,7 +10,7 @@ const Firm = require("../models/Firm")
              cb(null,'uploads/');
          },
          filename:function(req,file,cb){
-             cb(null, Date.now() + pathextname(file.originalname));
+             cb(null, Date.now() + path.extname(file.originalname));
          }
      });
  
