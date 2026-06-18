@@ -25,12 +25,16 @@ const PORT= process.env.PORT || 4000;
 
 
 
-dotEnv.config();
+
+
+
 
 
 
 
 const app = express();
+
+dotEnv.config();
 
 app.use(cors())
 
